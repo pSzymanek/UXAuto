@@ -149,7 +149,6 @@ body {
 
 	&__heading {
 		font-family: "Goldman", cursive;
-
 		font-size: 4.8rem;
 		font-weight: 700;
 	}
@@ -203,6 +202,33 @@ body {
 // ===========================
 // MEDIA
 // ===========================
+
+
+// HERO IMG
+
+.hero-img {
+	position: relative;
+	overflow: hidden;
+	padding: 10em 2em;
+	@include mixins.heroImages('../img/carA1_640.jpg');
+	text-align: center;
+	color: colors.$pure-white;
+
+	&__title {
+		font-family: "Goldman", cursive;
+		font-size: 4.8rem;
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		padding: 1em 0;
+	}
+}
+
+
+
+
+
 
 @media (min-width: 576px) {
 	.dreams {
@@ -259,6 +285,19 @@ body {
 			font-size: 1.8rem;
 		}
 	}
+
+	.hero-img {
+		padding: 30rem 2em;
+
+		hr {
+			margin: 0 auto;
+			width: 70%;
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -299,6 +338,20 @@ body {
 
 		&__text {
 			font-size: 2.2rem;
+		}
+	}
+
+	.hero-img {
+		padding: 40rem 2em;
+		background-image: colors.$blue-gradient, url('../img/carA1_1920.jpg');
+
+		&__title {
+			font-size: 7.2rem;
+		}
+
+		hr {
+			width: 60%;
+			max-width: 900px;
 		}
 	}
 }
