@@ -419,7 +419,7 @@ body {
 }
 
 //REVIEWS SECTION ////////////////////////////////
-@media(max-width: 767px) {
+@media (max-width: 767px) {
 	.reviews.section-padding {
 		padding: 6em 0;
 	}
@@ -465,6 +465,103 @@ body {
 		color: colors.$dark;
 	}
 }
+
+//CONTACT SECTION ////////////////////////////////
+.contact {
+	position: relative;
+	background-color: colors.$light-white;
+	overflow: hidden;
+
+	.white-block-left {
+		background-color: colors.$dark;
+	}
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		@include mixins.contactForm;
+	}
+
+	&__form-textarea {
+		@include mixins.contactForm;
+		resize: vertical;
+	}
+
+	&__form-btn {
+		align-self: flex-end;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: colors.$pure-white;
+		border: none;
+		border-radius: 3px;
+		background-color: colors.$main-color;
+		cursor: pointer;
+
+		&::before {
+			background-color: colors.$secondary-color;
+		}
+	}
+}
+
+//FOOTER ////////////////////////////////
+.footer {
+	color: colors.$pure-white;
+	background-color: colors.$dark;
+
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+
+	&__box {
+		font-size: 1.4rem;
+	}
+
+	&__box-desktop {
+		display: none;
+	}
+
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 2.8rem;
+		text-transform: uppercase;
+	}
+
+	&__box-social {
+		margin: 2em 0 1em;
+	}
+
+	&__box-link {
+		padding: 0 0.3em;
+		font-size: 3.6rem;
+		color: colors.$pure-white;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:hover {
+			color: colors.$light-white;
+		}
+	}
+
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+	}
+}
+
 ////////////////////////////////
 ////////////////////////////////
 ////////////////////////////////
@@ -537,6 +634,14 @@ body {
 }
 
 ///////////////////////////////////////////////
+@media (max-width: 280px) {
+	.hero-img {
+		&__title {
+			font-size: 4rem;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	.white-block {
 		height: 50px;
@@ -586,6 +691,43 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+		}
+
+		&__box-title {
+			font-size: 2.4rem;
+		}
+
+		&__box-list {
+			list-style: none;
+		}
+
+		&__box-list-item {
+			margin-bottom: 1em;
+
+			a {
+				color: colors.$light-white;
+				text-decoration: none;
+			}
 		}
 	}
 }
