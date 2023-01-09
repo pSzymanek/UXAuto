@@ -418,6 +418,53 @@ body {
 	}
 }
 
+//REVIEWS SECTION ////////////////////////////////
+@media(max-width: 767px) {
+	.reviews.section-padding {
+		padding: 6em 0;
+	}
+}
+
+.reviews {
+	&__box {
+		position: relative;
+		margin: 2em;
+		padding: 2em;
+		border-radius: 3px;
+		box-shadow: 3px 3px 10px #2e2e2e2e;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(0.95);
+		}
+	}
+
+	&__box-img {
+		position: absolute;
+		top: 8%;
+		left: 75%;
+		transform: translate(-50%, -50%);
+
+		img {
+			width: 80px;
+			height: 80px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+
+	&__box-quote {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		color: colors.$main-color;
+	}
+
+	&__box-text {
+		margin-bottom: 1em;
+		font-size: 1.4rem;
+		color: colors.$dark;
+	}
+}
 ////////////////////////////////
 ////////////////////////////////
 ////////////////////////////////
@@ -600,7 +647,7 @@ body {
 	}
 
 	.offers {
-		background-image: colors.$blue-gradient, url('../img/road_1920.jpg');
+		background-image: colors.$blue-gradient, url("../img/road_1920.jpg");
 
 		&__option {
 			&-img {
@@ -611,7 +658,6 @@ body {
 			&-text {
 				font-size: 1.5rem;
 			}
-
 		}
 	}
 }
