@@ -22,7 +22,7 @@ body {
 }
 
 // NAV ////////////////////////////////
-.burger-btn {
+.burger__btn {
 	position: fixed;
 	top: 20px;
 	right: 20px;
@@ -39,25 +39,25 @@ body {
 	}
 
 	&:hover {
-		.burger-btn__bars::after,
-		.burger-btn__bars::before {
+		.burger__btn-bars::after,
+		.burger__btn-bars::before {
 			width: 100%;
 		}
 	}
 
-	&__box {
+	&-box {
 		position: relative;
 		width: 40px;
 		height: 30px;
 	}
 
-	&__bars,
-	&__bars::after,
-	&__bars::before {
+	&-bars,
+	&-bars::after,
+	&-bars::before {
 		@include mixins.burgerBtn;
 	}
 
-	&__bars {
+	&-bars {
 		width: 100%;
 
 		&::after {
@@ -131,6 +131,11 @@ body {
 	animation: navItemsAnimation 1s both;
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: colors.$dark;
+}
 // HEADER ////////////////////////////////
 .header {
 	position: relative;
@@ -734,7 +739,7 @@ body {
 
 ///////////////////////////////////////////////
 @media (min-width: 992px) {
-	.burger-btn {
+	.burger__btn {
 		top: 50px;
 		right: 50px;
 	}
