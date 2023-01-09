@@ -181,6 +181,30 @@ body {
 		display: flex;
 		flex-direction: column;
 		margin: 2em 0;
+
+		&-img {
+			overflow: hidden;
+			position: relative;
+			line-height: 0;
+			&::before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				background-color: colors.$pure-white;
+				left: 80%;
+				bottom: 80%;
+				transform: rotate(135deg);
+			}
+			&--right {
+				&::before {
+					content: "";
+					transform: rotate(45deg);
+					left: -80%;
+					bottom: 80%;
+				}
+			}
+		}
 	}
 
 	&__img {
@@ -218,7 +242,6 @@ body {
 }
 
 //CARS SECTION ////////////////////////////////
-
 .cars {
 	&__card {
 		position: relative;
@@ -335,6 +358,66 @@ body {
 	}
 }
 
+//OFFERS SECTION ////////////////////////////////
+.offers {
+	position: relative;
+	@include mixins.heroImages("../img/road_640.jpg");
+	overflow: hidden;
+
+	.section-heading {
+		color: colors.$pure-white;
+	}
+
+	&__option {
+		margin: 1em 0;
+		box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+		background-color: colors.$pure-white;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&-info {
+			padding: 2em;
+			background-color: colors.$pure-white;
+			z-index: 10;
+		}
+
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			font-weight: 300;
+		}
+
+		&-text {
+			margin-bottom: 0.5em;
+			font-size: 1.3rem;
+			color: colors.$dark;
+		}
+
+		&-btn {
+			margin: 1em;
+			padding: 0.8em;
+			width: 100%;
+			color: colors.$pure-white;
+			background-color: colors.$main-color;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+
+			&::before {
+				background-color: colors.$secondary-color;
+			}
+		}
+	}
+}
+
 ////////////////////////////////
 ////////////////////////////////
 ////////////////////////////////
@@ -370,6 +453,38 @@ body {
 		&__img {
 			margin-bottom: 0;
 			max-height: 300px;
+		}
+	}
+
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 3.6rem;
+			}
+
+			&-btn {
+				padding: 1em;
+			}
 		}
 	}
 }
@@ -416,14 +531,15 @@ body {
 
 	.cars {
 		&__cards {
-			display: flex;justify-content: center;flex-wrap: wrap;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 
 		&__card {
 			margin: 1em;
 			width: 45%;
 		}
-
 	}
 }
 
@@ -480,6 +596,22 @@ body {
 		hr {
 			width: 60%;
 			max-width: 900px;
+		}
+	}
+
+	.offers {
+		background-image: colors.$blue-gradient, url('../img/road_1920.jpg');
+
+		&__option {
+			&-img {
+				object-fit: cover;
+				height: 400px;
+			}
+
+			&-text {
+				font-size: 1.5rem;
+			}
+
 		}
 	}
 }
